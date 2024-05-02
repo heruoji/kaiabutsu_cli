@@ -31,31 +31,6 @@ pub fn start_project(project_name: &str, package: &str, include_quote_example: b
         }
     }
 }
-//
-// fn prepare_file_creations<'a>(root_path: &'a Path, package: &'a str, project_name: &'a str, include_quote_example: bool) -> Vec<(PathBuf, &'a str)> {
-//     if include_quote_example {
-//         vec![
-//             (root_path.join("src/main/java").join(package.replace(".", "/")).join("Crawler.java"), &CRAWLER_JAVA_TEMPLATE.replace("{{package}}", package)),
-//             (root_path.join("src/main/resources").join(format!("{}.properties", project_name)), QUOTE_PROPERTIES_TEMPLATE),
-//             (root_path.join(".gitignore"), GITIGNORE_TEMPLATE),
-//             (root_path.join("build.gradle"), &QUOTE_BUILD_GRADLE_TEMPLATE.replace("{{group}}", package)),
-//             (root_path.join("settings.gradle"), &SETTINGS_GRADLE_TEMPLATE.replace("{{project_name}}", project_name)),
-//             (root_path.join("gradle/wrapper/gradle-wrapper.properties"), GRADLE_WRAPPER_PROPERTIES_TEMPLATE),
-//             (root_path.join("src/main/java").join(package.replace(".", "/")).join("/spider/QuoteSpider.java"), &QUOTE_SPIDER_TEMPLATE.replace("{{package}}", package)),
-//             (root_path.join("src/main/java").join(package.replace(".", "/")).join("/itempipeline/CsvWriterAuthorItemPipeline.java"), &QUOTE_ITEM_PIPELINE_TEMPLATE.replace("{{package}}", package)),
-//             (root_path.join("src/main/java").join(package.replace(".", "/")).join("/item/AuthorItem.java"), &QUOTE_ITEM_TEMPLATE.replace("{{package}}", package)),
-//         ]
-//     } else {
-//         vec![
-//             (root_path.join("src/main/java").join(package.replace(".", "/")).join("Crawler.java"), &CRAWLER_JAVA_TEMPLATE.replace("{{package}}", package)),
-//             (root_path.join("src/main/resources").join(format!("{}.properties", project_name)), APPLICATION_PROPERTIES_TEMPLATE),
-//             (root_path.join(".gitignore"), GITIGNORE_TEMPLATE),
-//             (root_path.join("build.gradle"), &BUILD_GRADLE_TEMPLATE.replace("{{group}}", package)),
-//             (root_path.join("settings.gradle"), &SETTINGS_GRADLE_TEMPLATE.replace("{{project_name}}", project_name)),
-//             (root_path.join("gradle/wrapper/gradle-wrapper.properties"), GRADLE_WRAPPER_PROPERTIES_TEMPLATE),
-//         ]
-//     }
-// }
 
 fn prepare_file_creations(root_path: &Path, package: &str, project_name: &str, include_quote_example: bool) -> Vec<(PathBuf, String)> {
     if include_quote_example {
